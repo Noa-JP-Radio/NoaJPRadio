@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get used to Japanese. Noa JP Radio is not a Japanese class. It's a place to stay in touch with Japanese at your own pace.">
+    <title>Noa JP Radio - Get used to Japanese.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <a href="#" class="logo">
+                <img src="images/profile_noa.jpg" alt="Logo" style="width: 24px; height: 24px; border-radius: 50%;"> Noa
+                JP Radio
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#philosophy" class="nav-link">Mission</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#offer" class="nav-link" style="color: var(--color-accent); font-weight: 600;">Offer Ends
+                    Jan 31</a>
+                <a href="index_ja.html" class="nav-link" style="font-weight: 600;">日本語</a>
+                <a href="https://noajpradio.substack.com/podcast" class="btn btn-primary desktop-only" target="_blank"
+                    rel="noopener noreferrer">Start Listening</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offer Banner -->
+    <div class="offer-banner">
+        <div class="container">
+            <a href="#offer">
+                <span>🎉 Exclusive 2026 Offer: Annual Plan 20% OFF</span>
+                <span class="offer-link-text">See Details →</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container-narrow">
+            <h1 class="hero-title">Get used to Japanese.</h1>
+            <p class="hero-subtitle">
+                It's okay if you don't understand.<br>
+                Just keep listening, and your sense for the language will grow.
+            </p>
+            <div class="hero-actions desktop-only">
+                <a href="https://noajpradio.substack.com/podcast" class="btn btn-primary btn-lg" target="_blank"
+                    rel="noopener noreferrer">Start Listening for Free</a>
+            </div>
+
+            <!-- Listen at the bottom -->
+        </div>
+    </section>
+
+    <!-- Feature Tabs Section (Notion Style) -->
+    <section id="features" class="section feature-tabs">
+        <div class="container">
+            <div class="section-title-wrapper" style="text-align: center; margin-bottom: var(--space-2xl);">
+                <h2>What you get from <br class="mobile-only">Noa JP Radio</h2>
+                <p style="color: var(--color-text-secondary);">Everything you need to immerse yourself naturally.</p>
+            </div>
+
+            <div class="tabs-container">
+                <!-- Tab Menu (Left) -->
+                <div class="tabs-menu">
+                    <button class="tab-btn active" onclick="openTab(event, 'podcast-tab')">
+                        <span class="tab-title">Podcast</span>
+                        <span class="tab-desc">Daily conversations, not textbook drills.</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab(event, 'newsletter-tab')">
+                        <span class="tab-title">Newsletter</span>
+                        <span class="tab-desc">Culture, current news, and learning tips.</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab(event, 'learning-tab')">
+                        <span class="tab-title">Learning Content</span>
+                        <span class="tab-desc">Full transcripts and vocabulary lists.</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab(event, 'others-tab')">
+                        <span class="tab-title">Others</span>
+                        <span class="tab-desc">Early access and exclusive offers.</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content (Right) -->
+                <div class="tabs-content">
+                    <div id="podcast-tab" class="tab-pane active">
+                        <div style="font-size: 64px; margin-bottom: 24px;">🎙️</div>
+                        <h3>Natural Japanese Podcast</h3>
+                        <p style="max-width: 400px; margin: 0 auto;">Listen anytime. I speak at natural speed about
+                            daily life, culture, and thoughts. It's about exposure, not study.</p>
+                    </div>
+
+                    <div id="newsletter-tab" class="tab-pane">
+                        <div style="font-size: 64px; margin-bottom: 24px;">✉️</div>
+                        <h3>Culture, News & Tips</h3>
+                        <p style="max-width: 400px; margin: 0 auto;">Deepen your connection with Japan. I share insights
+                            on Japanese culture, current news happening in Japan, and practical learning tips.</p>
+                    </div>
+
+                    <div id="learning-tab" class="tab-pane">
+                        <div style="font-size: 64px; margin-bottom: 24px;">📚</div>
+                        <h3>Learning Content</h3>
+                        <p style="max-width: 400px; margin: 0 auto;">Master every episode. Access full Japanese
+                            transcripts, vocabulary lists, and detailed guides for all podcast content.</p>
+                    </div>
+
+                    <div id="others-tab" class="tab-pane">
+                        <div style="font-size: 64px; margin-bottom: 24px;">✨</div>
+                        <h3>Exclusive Access</h3>
+                        <p style="max-width: 400px; margin: 0 auto;">Be the first to know. Get early access to special
+                            content, new projects, and receive exclusive limited-time offers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto / Philosophy Section -->
+    <section id="philosophy" class="section manifesto-section">
+        <div class="container-narrow">
+            <div class="manifesto-text">
+                <p><strong>This is not a class.</strong></p>
+                <p>I don't teach grammar rules. I don't give tests. Because you don't need another textbook.</p>
+                <p>What you need is <span class="manifesto-highlight">exposure</span>.</p>
+                <p>Babies don't study grammar. They listen. They observe. They feel the language before they understand
+                    it. That is how we naturally learn.</p>
+                <p>Noa JP Radio is designed to be your daily dose of real Japanese. It might feel fast. It might feel
+                    difficult. <strong>That's okay.</strong></p>
+                <p>Just keep listening. Your ears will adapt. Your brain will find the patterns.</p>
+                <p>Understanding comes later. Familiarity comes first.</p>
+                <br>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <img src="images/profile_noa.jpg" alt="Noa" class="profile-img"
+                        style="width: 64px; height: 64px; border: none; margin: 0;">
+                    <div>
+                        <div style="font-weight: 700;">Noa</div>
+                        <div style="color: var(--color-text-secondary); font-size: 14px;">Creator of Noa JP Radio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Comparison -->
+    <section id="pricing" class="section content-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: var(--space-xl);">Plan Comparison</h2>
+
+            <div class="pricing-container">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Free Plan</h3>
+                    <div class="pricing-price">$0</div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Forever</p>
+
+                    <ul class="pricing-features">
+                        <li>Podcast episodes</li>
+                        <li>Newsletter</li>
+                        <li>Basic learning tips</li>
+                    </ul>
+
+                    <a href="https://noajpradio.substack.com" class="btn btn-primary" target="_blank"
+                        rel="noopener noreferrer" style="width: 100%; margin-top: var(--space-lg);">Start for Free</a>
+                </div>
+
+                <!-- Monthly Plan -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Monthly Plan</h3>
+                    <div class="pricing-price">$6.99/mo</div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Flexible</p>
+
+                    <ul class="pricing-features">
+                        <li>Everything in Free Plan</li>
+                        <li>Complete Transcripts</li>
+                        <li>Vocabulary Guides</li>
+                        <li>Cultural Context & Notes</li>
+                        <li>Early access to special content</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+
+                    <a href="https://noajpradio.substack.com/subscribe" class="btn btn-primary" target="_blank"
+                        rel="noopener noreferrer" style="width: 100%; margin-top: var(--space-lg);">Subscribe
+                        Monthly</a>
+                </div>
+
+                <!-- Annual Plan -->
+                <div class="pricing-card featured">
+                    <h3 class="pricing-title">Annual Plan</h3>
+                    <div class="pricing-badge">🎉 20% OFF - Ends Jan 31</div>
+                    <div class="pricing-original">$69.90/year</div>
+                    <div class="pricing-price">$55.92/year</div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Approx. $4.66/month
+                    </p>
+
+                    <ul class="pricing-features">
+                        <li>Everything in Free Plan</li>
+                        <li>Complete Transcripts</li>
+                        <li>Vocabulary Guides</li>
+                        <li>Cultural Context & Notes</li>
+                        <li class="text-highlight">Priority access to special content & guides</li>
+                        <li class="text-highlight">Guaranteed event participation (no capacity limits)</li>
+                    </ul>
+
+                    <a href="https://noajpradio.substack.com/learn_japanese_2026" class="btn btn-primary"
+                        target="_blank" rel="noopener noreferrer"
+                        style="width: 100%; margin-top: var(--space-lg);">Subscribe with 20% OFF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Offer Section (Integrated from offer.html) -->
+    <section id="offer" class="section section-alt content-section" style="background-color: var(--color-surface);">
+        <div class="container-narrow">
+            <div style="text-align: center; margin-bottom: var(--space-xl);">
+                <h2 class="hero-title">Boost Your Japanese Learning in 2026</h2>
+                <div class="pricing-badge"
+                    style="display: inline-block; margin: var(--space-md) 0; padding: 8px 16px; font-size: 1.2rem;">
+                    Annual Plan 20% OFF</div>
+            </div>
+
+            <div class="section-text" style="margin-bottom: var(--space-2xl);">
+                <h3 style="margin-bottom: var(--space-lg); text-align: center;">Why does
+                    this offer exist?</h3>
+                <p>A new year is the perfect time to build new habits.</p>
+                <p>Many learners tell me the same thing:</p>
+                <blockquote
+                    style="border-left: 4px solid var(--color-divider); padding-left: var(--space-md); margin: var(--space-lg) 0; color: var(--color-text-secondary); font-style: italic;">
+                    "I'm studying Japanese, but I can't understand native speakers."<br>
+                    "Textbook Japanese feels different from actual conversation."<br>
+                    "I'm studying, but I don't feel like I'm improving."
+                </blockquote>
+                <p>That's why my podcast focuses on real Japanese spoken naturally, providing transcripts and vocabulary
+                    support.</p>
+
+                <p style="margin-top: var(--space-xl);"><strong>This offer is for learners who want to:</strong></p>
+                <ul style="list-style: none; padding: 0; display: inline-block; text-align: left; margin-top: var(--space-lg);"
+                    class="pricing-features">
+                    <li>Build comprehension faster</li>
+                    <li>Understand real spoken Japanese</li>
+                    <li>Learn useful vocabulary in context</li>
+                    <li>Keep listening consistently over months, not just days</li>
+                </ul>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--color-divider); margin: var(--space-2xl) 0;">
+
+            <div style="text-align: center;">
+
+                <div class="urgency-box"
+                    style="margin: var(--space-xl) auto; background: white; border: 1px solid var(--color-border); padding: var(--space-md); border-radius: var(--border-radius);">
+                    <p class="urgency-text" style="margin: 0;">⏰ This offer ends January 31, 2026 (JST)</p>
+                </div>
+                <a href="https://noajpradio.substack.com/learn_japanese_2026" class="btn btn-primary btn-lg"
+                    target="_blank" rel="noopener noreferrer">Subscribe now with 20% OFF</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 16px;">
+                        <img src="images/profile_noa.jpg" alt="Logo"
+                            style="width: 24px; height: 24px; border-radius: 50%;"> Noa JP Radio
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">
+                        Get used to Japanese naturally.<br>
+                        © 2026 Noa JP Radio.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <div class="footer-links">
+                        <div class="footer-item">
+                            <a href="javascript:void(0)" class="footer-link" onclick="openPodcastModal()">Podcast</a>
+                        </div>
+                        <a href="https://noajpradio.substack.com/" target="_blank" class="footer-link">Newsletter</a>
+                        <a href="#pricing" class="footer-link">Pricing</a>
+                    </div>
+                </div>
+                <!-- Resources Column Removed -->
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div class="footer-links">
+                        <a href="https://www.threads.net/@noa_jp_radio" target="_blank" class="footer-link">Threads</a>
+                        <a href="https://noajpradio.substack.com/" target="_blank" class="footer-link">Substack</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching logic
+        function openTab(evt, tabName) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-pane");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+                tabContent[i].style.display = "none";
+            }
+            tabLinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "flex";
+            // Small delay to allow display flex to apply before opacity transition if needed, 
+            // but CSS animation handles the active class
+            setTimeout(() => {
+                document.getElementById(tabName).classList.add("active");
+            }, 10);
+
+            evt.currentTarget.className += " active";
+        }
+
+        // Podcast Modal Functions
+        function openPodcastModal() {
+            document.getElementById("podcastModal").classList.add("active");
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        }
+
+        function closePodcastModal() {
+            document.getElementById("podcastModal").classList.remove("active");
+            document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Close on background click
+        window.onclick = function (event) {
+            var modal = document.getElementById("podcastModal");
+            if (event.target == modal) {
+                closePodcastModal();
+            }
+        }
+    </script>
+
+    <!-- Podcast Selection Modal -->
+    <div id="podcastModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closePodcastModal()">&times;</span>
+            <div class="modal-header">
+                <h3 class="modal-title">Choose Platform</h3>
+            </div>
+            <div class="platform-list">
+                <a href="https://noajpradio.substack.com" target="_blank" class="platform-btn">
+                    <span>Substack</span>
+                    <span class="platform-subtitle">Main platform (Newsletter included)</span>
+                </a>
+                <a href="https://podcasts.apple.com/us/podcast/noa-jp-radio/id1859420277" target="_blank"
+                    class="platform-btn">
+                    <span>Apple Podcasts</span>
+                </a>
+                <a href="https://open.spotify.com/show/3BrrK1HGmdscstBsglxon0?si=b51efe503fb64dd2" target="_blank"
+                    class="platform-btn">
+                    <span>Spotify</span>
+                </a>
+                <a href="https://music.youtube.com/playlist?list=PLt1fJzevXNJs5Jh8sBwtlplb1mbosIDEI&si=jcTeRmWEBPgjFVDi"
+                    target="_blank" class="platform-btn">
+                    <span>YouTube Music</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

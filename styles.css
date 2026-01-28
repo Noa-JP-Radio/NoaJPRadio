@@ -1,0 +1,1196 @@
+/* ===================================
+   Noa JP Radio - Notion Style Design
+   =================================== */
+
+/* CSS Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette - Notion Style */
+    --color-bg: #FFFFFF;
+    --color-surface: #F7F7F5;
+    /* Notion's subtle gray background */
+    --color-surface-hover: #EFEFEF;
+
+    --color-text: #111111;
+    /* Almost black */
+    --color-text-secondary: #707070;
+    /* Gray for subtitles */
+    --color-text-tertiary: #9B9B9B;
+
+    --color-border: #E0E0E0;
+    --color-divider: #EDEDED;
+
+    --color-primary: #000000;
+    /* Primary action is black */
+    --color-primary-hover: #333333;
+
+    --color-accent: #E16259;
+    /* Notion's specific red accent for small highlights if needed */
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
+    --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 64px;
+
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.6;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+
+    /* Layout */
+    --container-max: 1100px;
+    /* Slightly tighter than standard */
+    --container-narrow: 720px;
+    /* Text optimization */
+    --border-radius-sm: 4px;
+    --border-radius: 6px;
+    /* Notion uses small radii */
+    --border-radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-pop: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+}
+
+/* Typography */
+html {
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: var(--line-height-normal);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+    letter-spacing: -0.03em;
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+p {
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+    font-size: var(--font-size-lg);
+    /* Slightly larger for readability */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.container-narrow {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.section {
+    padding: var(--space-2xl) 0;
+}
+
+.section-alt {
+    background-color: var(--color-bg-alt);
+}
+
+/* Visibility Utilities */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--color-text);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    /* Notion sizing */
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    line-height: 1;
+    border: none;
+    font-family: var(--font-primary);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-text-tertiary);
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: var(--font-size-base);
+    border-radius: 6px;
+}
+
+/* Hero Section */
+.hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    min-height: unset;
+    /* Override previous min-height */
+    display: block;
+    /* Override previous flex */
+    align-items: unset;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-bg);
+}
+
+/* Removed floating bubbles for cleaner look */
+.hero::before,
+.hero::after {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+    text-align: center;
+    /* Default center for narrow layout, can override for split */
+    max-width: 100%;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+.hero-title span {
+    color: var(--color-text);
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--color-text-secondary);
+    max-width: 640px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.5;
+    font-weight: 400;
+    /* Adjust from previous 500 */
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-visual {
+    max-width: 660px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-pop);
+    line-height: 0;
+    /* Remove extra space below iframe */
+}
+
+.hero-img {
+    width: 100%;
+    display: block;
+}
+
+/* Feature Tabs Section (Notion style) */
+.feature-tabs {
+    padding: var(--space-3xl) 0;
+}
+
+.tabs-container {
+    display: flex;
+    gap: var(--space-2xl);
+    align-items: flex-start;
+}
+
+.tabs-menu {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.tab-btn {
+    text-align: left;
+    background: none;
+    border: none;
+    padding: var(--space-md);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+}
+
+.tab-btn:hover {
+    background-color: var(--color-surface);
+}
+
+.tab-btn.active {
+    background-color: var(--color-surface);
+}
+
+.tab-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.tab-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+.tabs-content {
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-pane {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-xl);
+}
+
+.tab-pane.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Content Sections (Manifesto style) */
+.content-section {
+    text-align: center;
+}
+
+.content-section .section-title {
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: var(--space-xl);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    /* Removed underline for cleaner look */
+    display: none;
+}
+
+.section-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    text-align: left;
+    /* Changed from inherited center to explicit left */
+}
+
+.manifesto-section {
+    padding: var(--space-3xl) 0;
+    border-top: 1px solid var(--color-divider);
+}
+
+.manifesto-section {
+    background-color: var(--color-surface);
+    /* Notion's soft gray/beige */
+    padding: var(--space-3xl) 0;
+}
+
+.manifesto-text {
+    background-color: var(--color-bg);
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.manifesto-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: var(--space-2xl);
+    bottom: var(--space-2xl);
+    width: 4px;
+    background-color: var(--color-text);
+    border-radius: 0 4px 4px 0;
+}
+
+.manifesto-text p {
+    font-family: var(--font-primary);
+    font-size: 19px;
+    /* Slightly tighter than before for better readability */
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+}
+
+.manifesto-highlight {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid var(--color-divider);
+}
+
+/* Cards (Pricing/Features) */
+.grid-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.grid-cols-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    background: var(--color-bg);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+.card-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.card-desc {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
+.feature-card {
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    line-height: 1;
+}
+
+.feature-icon-img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-md);
+    object-fit: contain;
+}
+
+.feature-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+.feature-description {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-section .section-title {
+    color: white;
+}
+
+.cta-section .btn-secondary,
+.offer-hero .btn-secondary {
+    background-color: white;
+    color: var(--color-primary);
+    border-color: white;
+}
+
+.cta-section .btn-secondary:hover,
+.offer-hero .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.cta-section .section-title::after {
+    background: white;
+}
+
+.cta-section .section-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Offer Banner - Notion Alert style */
+.offer-banner {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 10px 0;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.offer-banner a {
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    transition: opacity var(--transition-fast);
+    flex-wrap: wrap;
+    padding: 0 var(--space-md);
+}
+
+.offer-banner a:hover {
+    opacity: 0.7;
+}
+
+.offer-link-text {
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.pricing-features li.text-highlight {
+    color: #D9730D;
+    /* Warm Notion-style orange */
+    font-weight: 600;
+}
+
+.offer-banner-link:hover {
+    opacity: 0.8;
+}
+
+/* Pricing Styles */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    min-width: 280px;
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    /* Add border for Notion style */
+}
+
+.pricing-card.featured {
+    border: 3px solid var(--color-primary);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-pop);
+    /* Use pop shadow for featured */
+}
+
+.pricing-badge {
+    background: var(--color-accent);
+    /* Use accent color */
+    color: white;
+    /* White text on accent */
+    font-weight: 700;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--border-radius);
+    display: inline-block;
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-sm);
+}
+
+.pricing-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-sm);
+}
+
+.pricing-price {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.pricing-original {
+    text-decoration: line-through;
+    color: var(--color-text-tertiary);
+    /* Use tertiary text color */
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-md);
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-lg) 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    padding: var(--space-sm) 0;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    text-align: left;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Urgency Elements */
+.urgency-box {
+    background: #FFF3E0;
+    border-left: 4px solid #FFB84D;
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+    border-radius: var(--border-radius);
+}
+
+.urgency-text {
+    color: #E65100;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Offer Page Specific */
+.offer-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    color: white;
+    padding: var(--space-3xl) 0;
+    text-align: center;
+}
+
+.offer-hero h1 {
+    color: white;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.offer-hero .hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: var(--font-size-lg);
+}
+
+.discount-highlight {
+    background: var(--color-accent);
+    /* Use accent color */
+    color: white;
+    /* White text on accent */
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    display: inline-block;
+    margin: var(--space-lg) 0;
+    box-shadow: var(--shadow-pop);
+    /* Use pop shadow */
+}
+
+/* Footer */
+.footer {
+    padding: var(--space-3xl) 0;
+    border-top: 1px solid var(--color-divider);
+    background-color: var(--color-bg);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.footer-col h4 {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-link {
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: var(--color-text-secondary);
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --font-size-4xl: 40px;
+        --space-3xl: 64px;
+    }
+
+    .navbar-container {
+        padding: 0 var(--space-md);
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: var(--space-md);
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 8vw, 40px);
+    }
+
+    .tabs-container {
+        flex-direction: column;
+    }
+
+    .tabs-menu {
+        flex: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
+        padding: var(--space-sm);
+        overflow: visible;
+    }
+
+    .tab-btn {
+        min-width: 0;
+        width: 100%;
+        padding: var(--space-sm);
+        text-align: center;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+    }
+
+    .tab-btn.active {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    .tab-btn.active .tab-desc {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        text-align: center;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .grid-cols-2,
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: unset;
+        /* Override previous min-height */
+    }
+
+    .section {
+        padding: var(--space-2xl) 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .container,
+    .container-narrow {
+        padding: 0 var(--space-md);
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: var(--space-lg);
+    }
+
+    .pricing-card.featured {
+        transform: scale(1);
+        z-index: 1;
+    }
+
+    .offer-banner-text {
+        font-size: var(--font-size-base);
+    }
+
+    .discount-highlight {
+        font-size: var(--font-size-2xl);
+        padding: var(--space-sm) var(--space-lg);
+    }
+
+    .content-row,
+    .content-row.reverse {
+        flex-direction: column;
+        gap: var(--space-lg);
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .col-text {
+        text-align: center;
+    }
+
+    .content-illustration {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 15px;
+        --space-lg: 1.5rem;
+        --space-xl: 2rem;
+        --space-2xl: 3rem;
+    }
+
+    .btn {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--font-size-base);
+    }
+
+    .pricing-container {
+        gap: var(--space-sm);
+    }
+
+    .pricing-card {
+        min-width: 150px;
+        padding: var(--space-md);
+    }
+
+    .pricing-badge {
+        font-size: 0.7rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .pricing-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .pricing-price {
+        font-size: var(--font-size-xl);
+    }
+
+    .pricing-original {
+        font-size: var(--font-size-base);
+    }
+
+    .pricing-features {
+        font-size: var(--font-size-sm);
+    }
+
+    .pricing-features li {
+        padding: var(--space-xs) 0;
+    }
+}
+
+/* Accessibility */
+.btn:focus,
+a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+}
+
+/* Content Layout with Images */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xl);
+    margin: var(--space-xl) 0;
+}
+
+.content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.col-text {
+    flex: 1;
+    text-align: left;
+}
+
+.col-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.content-illustration {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    /* box-shadow: var(--shadow-sm); Removed shadow for flat vector integration */
+}
+
+/* Profile Image */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: var(--shadow-md);
+    margin: 0 auto;
+    display: block;
+}
+
+/* About Section Specifics */
+.about-subtitle {
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    display: block;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+    background-color: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    width: 90%;
+    max-width: 400px;
+    box-shadow: var(--shadow-pop);
+    position: relative;
+    text-align: center;
+}
+
+.modal-header {
+    margin-bottom: var(--space-lg);
+}
+
+.modal-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-text-tertiary);
+}
+
+.platform-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.platform-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.platform-btn:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-text);
+}
+
+.platform-subtitle {
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
